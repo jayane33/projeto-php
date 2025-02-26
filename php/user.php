@@ -1,5 +1,5 @@
 <?php
-require_once 'conn.php';  // Incluindo a classe de conexão
+require_once 'conn.php'; 
 
 class User
 {
@@ -10,8 +10,6 @@ class User
     public $nome;
     public $email;
     public $senha;
-    public $tipo_usuario;
-    public $is_admin = false;
 
     // Construtor recebe a conexão do banco de dados
     public function __construct($db)
@@ -19,22 +17,18 @@ class User
         $this->conn = $db;
     }
 
-    // Criar um novo usuário
     public function create()
     {
-        // $query = "INSERT INTO " . $this->table_name . "
-        //           SET nome = :nome, email = :email, senha = :senha, is_admin = :is_admin";
-$query = "INSERT INTO " . $this->table_name . "(nome, email, senha, is_admin) values (?, ?, ?, ?)";
+
+    $query = "INSERT INTO " . $this->table_name . "(nome, email, senha) values (?, ?, ?)";
 
 
-// Preparando a consulta
         $stmt = $this->conn->prepare($query);
 
         // Bind dos dados
         $stmt->bindParam(1, $this->nome, PDO::PARAM_STR);
         $stmt->bindParam(2, $this->email, PDO::PARAM_STR);
         $stmt->bindParam(3, $this->senha, PDO::PARAM_STR);
-        $stmt->bindParam(4, $this->is_admin, PDO::PARAM_BOOL);
 
         // Executando
         if ($stmt->execute()) {
@@ -46,7 +40,7 @@ $query = "INSERT INTO " . $this->table_name . "(nome, email, senha, is_admin) va
     // Verificar se o e-mail já está registrado
     public function emailExists()
     {
-        $query = "SELECT id_usuario, nome, email, senha, is_admin
+        $query = "SELECT id_usuario, nome, email, senha
                   FROM " . $this->table_name . "
                   WHERE email = :email";
 
@@ -66,7 +60,6 @@ $query = "INSERT INTO " . $this->table_name . "(nome, email, senha, is_admin) va
             $this->nome = $row['nome'];
             $this->email = $row['email'];
             $this->senha = $row['senha'];
-            $this->is_admin = $row['is_admin'];
             return true;
         }
 

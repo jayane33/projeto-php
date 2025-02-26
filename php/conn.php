@@ -4,7 +4,7 @@ class Database
     private $host = 'localhost';
     private $db_name = 'amanda';
     private $username = 'postgres';
-    private $password = '270280';
+    private $password = 'pabd';
     private $port = '5432';
     private $conn;
 
