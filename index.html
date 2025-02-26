@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <img
+            class="imglogo"
+            src="img/logo.png"
+            alt="Bootstrap"
+            width="80"
+            height="110"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="login.php"
+                >Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="cadastro.html"
+                >Cadastre-se</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="favoritos.html"
+                >Favoritos</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!--PESQUISA-->
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Digite o nome do livro"
+            aria-label="search"
+          />
+          <button class="btn btn-outline-success" type="submit">
+            Procurar
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="livros">
+      <h1>LIVROS</h1>
+      <div class="livros-container">
+        <div class="livro">
+          <a href="livros/pdf/A Hora da Estrela – Clarice Lispector.pdf">
+            <img
+              src="livros/A hora da estrela.png"
+              alt="A Hora da Estrela"
+              width="150"
+              height="200"
+            />
+          </a>
+          <br />
+          <button type="button" class="btn-favoritar" data-livro-id="1">
+            Favoritar
+          </button>
+        </div>
+        <div class="livro">
+          <a href="livros/pdf/O lustre - Clarice Lispector_-1886330429.pdf">
+            <img
+              src="livros/O lustre -CL.png"
+              alt="O lustre"
+              width="200"
+              height="150"
+            />
+          </a>
+          <br />
+          <button type="button" class="btn-favoritar" data-livro-id="1">
+            Favoritar
+          </button>
+        </div>
+        <div class="livro">
+          <a href="livros/pdf/01 - Submissa - Série The Enforcers - Maya Banks.pdf">
+            <img
+              src="livros/Submissa - MB.png"
+              alt="Submissa"
+              width="150"
+              height="200"
+            />
+          </a>
+          <br />
+          <button type="button" class="btn-favoritar" data-livro-id="1">
+            Favoritar
+          </button>
+        </div>
+        <div class="livro">
+          <a href="livros/pdf/02 - Dominada - Série The Enforcers - Maya Banks.pdf">
+            <img
+              src="livros/Dominada - MB.png"
+              alt="Dominada"
+              width="150"
+              height="200"
+            />
+          </a>
+          <br />
+          <button type="button" class="btn-favoritar" data-livro-id="1">
+            Favoritar
+          </button>
+        </div>
+        <div class="livro">
+          <a href="livros/pdf/03 - Seduzida - Série The Enforcers - Maya Banks.pdf">
+            <img
+              src="livros/Seduzida - MB.png"
+              alt="Seduzida"
+              width="150"
+              height="200"
+            />
+          </a>
+          <br />
+          <button type="button" class="btn-favoritar" data-livro-id="1">
+            Favoritar
+          </button>
+        </div>
+        <div class="livro">
+          <a href="livros/pdf/Antes que o cafe esfrie - Toshikazu Kawaguchi (1).pdf">
+            <img src="livros/Antes que o café esfrie.png" alt=""
+          /></a>
+          <button type="button" class="btn-favoritar" data-livro-id="1">
+            Favoritar
+          </button>
+        </div>
+        <div class="livro">
+          <a href="livros/pdf/Antes_Que_O_Café_Esfrie_2_Novas_E_Emocionantes_Via.pdf"
+            ><img src="livros/Antes que o café esfrie2.png" alt="" /></a
+          ><button type="button" class="btn-favoritar" data-livro-id="1">
+            Favoritar
+          </button>
+        </div>
+        <div class="livro">
+          <a href="livros/pdf/Em outra vida talvez_ - Taylor Jenkins Reid.pdf">
+            <img
+              src="livros/Em outra vida talvez.png"
+              alt="Em outra vida talvez"
+              width="150"
+              height="200"
+            />
+          </a>
+          <br />
+          <button type="button" class="btn-favoritar" data-livro-id="1">
+            Favoritar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--form comentario-->
+    <form action="salvar_comentario.php" method="POST">
+      <label for="titulo">Título do Livro:</label>
+      <input type="text" id="titulo" name="titulo" required>
+      <label for="comentario">Comentário:</label>
+      <textarea id="comentario" name="comentario" maxlength="500" required></textarea>
+      <button type="submit">Enviar</button>
+  </form>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const botoesFavoritar = document.querySelectorAll(".btn-favoritar");
+        botoesFavoritar.forEach((botao) => {
+          botao.addEventListener("click", function () {
+            const livroId = this.getAttribute("data-livro-id");
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "favoritar.php", true);
+            xhr.setRequestHeader(
+              "Content-Type",
+              "application/x-www-form-urlencoded"
+            );
+            xhr.onload = function () {
+              alert(this.responseText); // Exibe a resposta do servidor
+            };
+            xhr.send("livro_id=" + livroId);
+          });
+        });
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

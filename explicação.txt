@@ -1,0 +1,41 @@
+Criar uma biblioteca onde vou guardar meus pdfs de livros.
+
+Os livros serão divididos por sessões.
+
+Elementos do site:
+    - Barra de pesquisa.
+    - Login de usuário.
+    - Cadastro de usuário.
+    - Comentários sobre determinado livro.
+    - CRUD dos livros
+
+TABELAS ------------------------------------------------------------------------------------
+
+-- Tabela de Usuários
+CREATE TABLE usuarios (
+    id_usuario SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    is_admin BOOLEAN DEFAULT FALSE
+);
+
+-- Tabela de Livros
+CREATE TABLE livros (
+    id_livro SERIAL PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    autor VARCHAR(255) NOT NULL,
+    genero VARCHAR(100) NOT NULL
+);
+
+-- Tabela de Favoritos
+CREATE TABLE favoritos (
+    usuario_id INT NOT NULL,
+    livro_id INT NOT NULL,
+    PRIMARY KEY (usuario_id, livro_id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (livro_id) REFERENCES livros(id_livro) ON DELETE CASCADE
+);
+
+INSERT INTO livros(titulo, autor, genero)
+VALUES ('A Hora da Estrela', 'Clarisse Lispector', 'Clássico');
