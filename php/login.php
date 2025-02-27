@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_nome'] = $user->nome;      // Armazenar o nome do usuário
             $_SESSION['user_senha'] = $user->senha;    // Armazenar o senha do usuário
             $_SESSION['user_email'] = $user->email;    // Armazenar o e-mail do usuário
-            $_SESSION['is_admin'] = $user->is_admin;   // Armazenar se o usuário é admin
+            $_SESSION['is_admin'] = false;   // Armazenar se o usuário é admin
 
             // Redirecionar para a página principal ou área do usuário
             header("Location: ../index.html");

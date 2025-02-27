@@ -27,13 +27,12 @@ CREATE TABLE livros (
     genero VARCHAR(100) NOT NULL
 );
 
--- Tabela de Favoritos
-CREATE TABLE favoritos (
-    usuario_id INT NOT NULL,
-    livro_id INT NOT NULL,
-    PRIMARY KEY (usuario_id, livro_id),
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
-    FOREIGN KEY (livro_id) REFERENCES livros(id_livro) ON DELETE CASCADE
+-- Create the comments table
+CREATE TABLE comentarios (
+    id SERIAL PRIMARY KEY,
+    titulo_livro VARCHAR(255) NOT NULL,
+    comentario TEXT NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO livros(titulo, autor, genero)

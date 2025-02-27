@@ -10,9 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    echo "$nome";
-    echo "$email";
-
     // Criar a conexão com o banco
     $db = new Database();
     $conn = $db->getConnection();

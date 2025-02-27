@@ -141,16 +141,22 @@
           <br />
         </div>
       </div>
-    </div>    
+    </div>
 
     <!--form comentario-->
-    <form action="salvar_comentario.php" method="POST">
+    <form action="php/salvar_comentario.php" method="POST" class="comentarios">
       <label for="titulo">Título do Livro:</label>
-      <input type="text" id="titulo" name="titulo" required>
+      <input type="text" id="titulo" name="titulo" required />
       <label for="comentario">Comentário:</label>
-      <textarea id="comentario" name="comentario" maxlength="500" required></textarea>
+      <textarea
+        id="comentario"
+        name="comentario"
+        maxlength="500"
+        required
+      ></textarea>
       <button type="submit">Enviar</button>
-  </form>
+    </form>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const botoesFavoritar = document.querySelectorAll(".btn-favoritar");

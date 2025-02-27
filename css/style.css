@@ -57,3 +57,68 @@ h1{
     background-color: #ff4081;
     font-weight: bold;
 }
+
+/* Comment Form Styling */
+.comentarios {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    max-width: 600px;
+    border-left: 4px solid #ff4081;
+}
+
+.comentarios label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.comentarios input[type="text"],
+.comentarios textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.comentarios input[type="text"]:focus,
+.comentarios textarea:focus {
+    border-color: #ff4081;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 64, 129, 0.2);
+}
+
+.comentarios textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.comentarios button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.comentarios button:hover {
+    background-color: #e91e63;
+}
+
+/* Counter for character limit */
+.char-counter {
+    font-size: 12px;
+    color: #777;
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
