@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         } else {
             // Se a senha estiver incorreta
-            header("Location: /doceleitura/index/login.html");
+            header("Location: /doceleitura/login.html");
         }
     } else {
         // Se o e-mail não existir no banco de dados

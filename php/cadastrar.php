@@ -19,7 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user->nome = $nome;
     $user->email = $email;
     $user->senha = $senha;
-    $user->is_admin = false; // Define se é admin ou não
+    $user->is_super_admin ? true : false;
+
     print_r($user);
     // Verificar se o e-mail já existe
     if ($user->emailExists()) {

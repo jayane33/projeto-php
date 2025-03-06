@@ -1,6 +1,5 @@
 <?php
-// salvar_comentario.php - Handles the form submission to create a new comment
-// This file processes the POST data from your comment form
+
 session_start();
 
 require_once 'conn.php';
@@ -14,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Additional validation
     if (empty($titulo) || empty($comentario) || strlen($comentario) > 500) {
         // Redirect back with error message
-        header("Location: ../index.php?erro=dados_invalidos");
+        header("Location: ../index.html?erro=dados_invalidos");
         exit;
     }
 
@@ -34,16 +33,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
 
         // Redirect with success message
-        header("Location: /doceleitura/index/index.html");
+        header("Location: /doceleitura/index.html");
         exit;
     } catch (PDOException $e) {
         // Log error and redirect with error message
         error_log("Erro ao salvar comentário: " . $e->getMessage());
-        header("Location: ../index.php?erro=falha_ao_salvar");
+        header("Location: ../index.html?erro=falha_ao_salvar");
         exit;
     }
 } else {
     // If not a POST request, redirect to the homepage
-    header("Location: ../index.php");
+    header("Location: ../index.html");
     exit;
 }
