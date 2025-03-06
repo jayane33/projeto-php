@@ -34,12 +34,3 @@ CREATE TABLE comentarios (
     comentario TEXT NOT NULL,
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-INSERT INTO livros(titulo, autor, genero)
-VALUES ('A Hora da Estrela', 'Clarisse Lispector', 'Clássico');
-
-COISAS A MELHORAR, UMA TELA PARA INICIAR O SITE. -- JÁ FOII
-CONDIÇÕES DE EXCLUIR QUALQUER COMENTARIO ADM, os usuarios normais podem apenas vizualizar e editar os próprios Comentários.
-A pessoas só conseguir comentar se estiver logada no site.
-
-Caso não dar certo imclementar sistema de busca.
